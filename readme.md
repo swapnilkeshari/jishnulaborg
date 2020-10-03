@@ -18,7 +18,7 @@ If you need to upload image files or any other static files to use in the websit
 
 1. Fork this repository to your account.
 
-1. Configure the repository to publish a GitHub Pages site from a *docs* folder onh the *master* branch. Read [this document](https://docs.github.com/en/enterprise/2.14/user/articles/configuring-a-publishing-source-for-github-pages#publishing-your-github-pages-site-from-a-docs-folder-on-your-master-branch) if you need help.
+1. Configure the repository to publish a GitHub Pages site from a *docs* folder on the *master* branch. Read [this document](https://docs.github.com/en/enterprise/2.14/user/articles/configuring-a-publishing-source-for-github-pages#publishing-your-github-pages-site-from-a-docs-folder-on-your-master-branch) if you need help.
 
 1. Configure a custom domain for your website if you need to. Read [this document](https://docs.github.com/en/free-pro-team@latest/github/working-with-github-pages/configuring-a-custom-domain-for-your-github-pages-site) if you need help.
 

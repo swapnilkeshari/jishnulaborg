@@ -2,7 +2,7 @@
 
 This is a static website for a research group, hosted as GitHub Pages. 
 
-This website is designed to update its contents every 30 minutes based on [a Google Sheets document](https://docs.google.com/spreadsheets/d/1EDLlUuY2Ia5MKNbCTOftxxSxBaK3C9pRFOIUvMY30eY/edit?usp=sharing) with scheduled GitHub Actions jobs.
+This website is designed to update its contents every 30 minutes based on a Google Sheets document with scheduled GitHub Actions jobs.
 
 ## How does this website work?
 

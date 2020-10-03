@@ -52,4 +52,4 @@ The website builder in this project needs a valid Google API key to download web
 
 ## Acknowledgements
 
-This work was supported and funded by [JinYeong Bak](https://github.com/nosyu).
+This work was supported and funded by [JinYeong Bak](https://nosyu.github.io).

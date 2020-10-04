@@ -56,5 +56,7 @@ This work was supported and funded by [JinYeong Bak](https://nosyu.github.io/). 
 
 ## Tips
 - How to do line breaks in markdown
--- two spaces at the end of the line
--- https://gist.github.com/shaunlebron/746476e6e7a4d698b373
+
+  - Two spaces at the end of the line
+
+  - Reference: https://gist.github.com/shaunlebron/746476e6e7a4d698b373

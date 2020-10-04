@@ -55,4 +55,6 @@ The website builder in this project needs a valid Google API key to download web
 This work was supported and funded by [JinYeong Bak](https://nosyu.github.io/). The developer of this repo is [Jeongmin Byun](https://jmbyun.github.io/).
 
 ## Tips
-- How to do line breaks in markdown: https://gist.github.com/shaunlebron/746476e6e7a4d698b373
+- How to do line breaks in markdown
+-- two spaces at the end of the line
+-- https://gist.github.com/shaunlebron/746476e6e7a4d698b373

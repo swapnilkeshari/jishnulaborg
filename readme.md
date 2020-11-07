@@ -4,6 +4,8 @@ This is a static website for a research group, hosted as GitHub Pages.
 
 This website is designed to update its contents every 30 minutes based on a Google Sheets document with scheduled GitHub Actions jobs.
 
+![Builder](https://github.com/Human-Language-Intelligence/human-language-intelligence.github.io/workflows/Builder/badge.svg?branch=master)
+
 ## How does this website work?
 
 This project is designed to update its website contents in *[docs](docs)* folder every 30 minutes with scheduled GitHub Actions jobs defined in this [file](.github/workflows/builder.yml). The website contents also get updated when you push something into the website. 

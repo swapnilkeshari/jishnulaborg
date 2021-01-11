@@ -30,7 +30,7 @@ jobs:
           git config --local user.name "GitHub Action"
           git add docs/\*
           set +e
-          git status | grep modified
+          git status | grep 'modified\|new file'
           if [ $? -eq 0 ]
           then
               set -e

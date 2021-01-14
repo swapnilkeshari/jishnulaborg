@@ -61,3 +61,6 @@ This work was supported and funded by [JinYeong Bak](https://nosyu.github.io/). 
   - Two spaces at the end of the line (recommended, https://stackoverflow.com/a/33191810)
   - One empty line between lines
   - Reference: https://gist.github.com/shaunlebron/746476e6e7a4d698b373
+- How to update the webpage
+  - Go to [Actions](https://github.com/Human-Language-Intelligence/human-language-intelligence.github.io/actions?query=workflow%3ABuilder) page
+  - Click `Run workflow` button

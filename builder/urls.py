@@ -11,28 +11,10 @@ def get_safe_path(pathname):
     else:
         return '%s/index.html' % pathname
 
-def lambda_render_personal_website(x, y):
-    return lambda xx: render_personal_website(xx, y)
+def lambda_render_page_lists(x, y, func):
+    return lambda xx: func(xx, y)
     
 def get_pages(data):
-    return_temp = list()
-    for website_personal in data['personal']:
-        print(website_personal)
-        return_temp.append(
-            Page(
-                get_safe_path(website_personal['path']), 
-                #lambda x: render_personal_website(x, website_personal['path'])
-                lambda_render_personal_website(data, website_personal['path'])
-            )
-        )
-    print("HIHI")
-#     return_temp = [
-#         Page(
-#             get_safe_path(website_personal['path']), 
-#             lambda x: render_personal_website(x, website_personal['path'])
-#         ) for website_personal in data['personal']
-#     ]
-    
     return [
         Page('index.html', render_index),
         Page('members.html', render_members),
@@ -42,11 +24,16 @@ def get_pages(data):
     ] + [
         Page(
             get_safe_path(page['path']), 
-            lambda x: render_page(x, page),
+            lambda_render_page_lists(data, page, funcs=render_page)
         ) for page in data['pages']
     ] + [
         Page(
             get_safe_path(redirect['path']), 
-            lambda x: render_redirect(x, redirect),
+            lambda_render_page_lists(data, redirect, funcs=render_redirect)
         ) for redirect in data['redirects']
-    ] + return_temp
+    ] + [
+        Page(
+            get_safe_path(website_personal['path']), 
+            lambda_render_page_lists(data, website_personal, funcs=render_personal_website),
+        ) for website_personal in data['personal']
+    ]

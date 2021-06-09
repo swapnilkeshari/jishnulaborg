@@ -1,4 +1,5 @@
 from .renderer import *
+import copy
 
 class Page:
     def __init__(self, path, renderer):
@@ -12,9 +13,6 @@ def get_safe_path(pathname):
         return '%s/index.html' % pathname
 
 def get_pages(data):
-    print(data['personal'])
-    for website_personal in data['personal']
-        print(website_personal)
     return [
         Page('index.html', render_index),
         Page('members.html', render_members),
@@ -34,6 +32,6 @@ def get_pages(data):
     ] + [
         Page(
             get_safe_path(website_personal['path']), 
-            lambda x: render_personal_website(x, website_personal),
+            lambda x: render_personal_website(x, copy.deepcopy(website_personal)),
         ) for website_personal in data['personal']
     ]

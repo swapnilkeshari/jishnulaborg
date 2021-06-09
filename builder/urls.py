@@ -31,7 +31,7 @@ def get_pages(data):
         ) for redirect in data['redirects']
     ] + [
         Page(
-            get_safe_path(website['path']), 
-            lambda x: render_personal_website(x, website),
-        ) for website in data['personal']
+            get_safe_path(website_personal['path']), 
+            lambda x: render_personal_website(x, website_personal),
+        ) for website_personal in data['personal']
     ]

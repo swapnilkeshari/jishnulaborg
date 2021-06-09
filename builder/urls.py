@@ -12,6 +12,7 @@ def get_safe_path(pathname):
         return '%s/index.html' % pathname
 
 def get_pages(data):
+    print(data['personal'])
     return [
         Page('index.html', render_index),
         Page('members.html', render_members),

@@ -11,6 +11,9 @@ def get_safe_path(pathname):
     else:
         return '%s/index.html' % pathname
 
+def lambda_render_personal_website(x, y):
+    return lambda xx: render_personal_website(xx, y)
+    
 def get_pages(data):
     return_temp = list()
     for website_personal in data['personal']:
@@ -18,7 +21,8 @@ def get_pages(data):
         return_temp.append(
             Page(
                 get_safe_path(website_personal['path']), 
-                lambda x: render_personal_website(x, website_personal['path'])
+                #lambda x: render_personal_website(x, website_personal['path'])
+                lambda_render_personal_website(data, website_personal['path'])
             )
         )
     print("HIHI")

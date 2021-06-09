@@ -64,6 +64,8 @@ def render_redirect(data, redirect):
     return template.render(data=data, url=redirect['url'])
 
 def render_personal_website(data, website_param):
+    print()
+    print(website_param)
     template = env.get_template('personal_website.html')
     return template.render(data=data, website=website_param['website'], contents=website_param['contents'])
 

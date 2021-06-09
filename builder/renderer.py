@@ -63,16 +63,7 @@ def render_redirect(data, redirect):
     template = env.get_template('redirect.html')
     return template.render(data=data, url=redirect['url'])
 
-def render_personal_website(data, website_path):
-    website_param = None
-    for one_personal in data['personal']:
-        if one_personal['path'] == website_path:
-            website_param = one_personal
-            break
-    print()
-    print(website_path)
-    print(website_param)
-    
+def render_personal_website(data, website_param):   
     template = env.get_template('personal_website.html')
     return template.render(data=data, website=website_param['website'], contents=website_param['contents'])
 

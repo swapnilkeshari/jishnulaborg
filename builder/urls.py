@@ -15,6 +15,13 @@ def get_pages(data):
     for website_personal in data['personal']:
         print(website_personal)
     print("HIHI")
+    return_temp = [
+        Page(
+            get_safe_path(website_personal['path']), 
+            lambda x: render_personal_website(x, website_personal['path'])
+        ) for website_personal in data['personal']
+    ]
+    
     return [
         Page('index.html', render_index),
         Page('members.html', render_members),
@@ -31,9 +38,4 @@ def get_pages(data):
             get_safe_path(redirect['path']), 
             lambda x: render_redirect(x, redirect),
         ) for redirect in data['redirects']
-    ] + [
-        Page(
-            get_safe_path(website_personal['path']), 
-            lambda x: render_personal_website(x, website_personal['path'])
-        ) for website_personal in data['personal']
-    ]
+    ] + return_temp

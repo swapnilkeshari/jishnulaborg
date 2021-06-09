@@ -1,9 +1,10 @@
 from .renderer import *
 
 class Page:
-    def __init__(self, path, renderer):
+    def __init__(self, path, renderer, data_more=None):
         self.path = path
         self.renderer = renderer
+        self.data_more = data_more
 
 def get_safe_path(pathname):
     if pathname.endswith('.html'):
@@ -35,5 +36,6 @@ def get_pages(data):
         Page(
             get_safe_path(website_personal['path']), 
             lambda x: render_personal_website(x, website_personal),
+            data_more = website_personal
         ) for website_personal in data['personal']
     ]

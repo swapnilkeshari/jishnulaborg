@@ -24,16 +24,16 @@ def get_pages(data):
     ] + [
         Page(
             get_safe_path(page['path']), 
-            lambda_render_page_lists(data, page, funcs=render_page)
+            lambda_render_page_lists(data, page, func=render_page)
         ) for page in data['pages']
     ] + [
         Page(
             get_safe_path(redirect['path']), 
-            lambda_render_page_lists(data, redirect, funcs=render_redirect)
+            lambda_render_page_lists(data, redirect, func=render_redirect)
         ) for redirect in data['redirects']
     ] + [
         Page(
             get_safe_path(website_personal['path']), 
-            lambda_render_page_lists(data, website_personal, funcs=render_personal_website),
+            lambda_render_page_lists(data, website_personal, func=render_personal_website),
         ) for website_personal in data['personal']
     ]

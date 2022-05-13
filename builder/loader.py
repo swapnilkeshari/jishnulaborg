@@ -159,6 +159,7 @@ def load_personal(table):
             continue
         websites.append({'path': pathname, 'url': url})
     
+    websites_returned = list()
     for website in websites:
         data_url = website['url']
         doc_id = get_doc_id(data_url)
@@ -169,8 +170,9 @@ def load_personal(table):
             continue
         website['website'] = conv_personal_website(tables[0])
         website['contents'] = conv_personal_contents(tables[1])
+        websites_returned.append(website)
 
-    return websites
+    return websites_returned
 
 def conv_pages(table):
     pages = []

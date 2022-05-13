@@ -2,6 +2,7 @@ import certifi
 import dateutil.parser
 import re
 import json
+import urllib
 import urllib.parse
 import urllib.request
 from datetime import datetime, timezone
@@ -161,7 +162,11 @@ def load_personal(table):
     for website in websites:
         data_url = website['url']
         doc_id = get_doc_id(data_url)
-        tables = load_ranges(doc_id, PERSONAL_RANGES)
+        try:
+            tables = load_ranges(doc_id, PERSONAL_RANGES)
+        except urllib.error.HTTPError:
+            print("Error: {}".format(website))
+            continue
         website['website'] = conv_personal_website(tables[0])
         website['contents'] = conv_personal_contents(tables[1])
 
